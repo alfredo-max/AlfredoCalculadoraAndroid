@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
          String valor1=text_valor1.getText().toString();
          String valor2=text_valor2.getText().toString();
          if(!ValidarVacio(valor1,valor2)){
-             double num1= Integer.parseInt(valor1);
-             double num2= Integer.parseInt(valor2);
+             double num1= Double.parseDouble(valor1);
+             double num2= Double.parseDouble(valor2);
              String resultado= String.valueOf(num1+num2);
              text_resultado.setText(resultado);
          }
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         String valor2=text_valor2.getText().toString();
 
         if(!ValidarVacio(valor1,valor2)){
-            double num1= Integer.parseInt(valor1);
-            double num2= Integer.parseInt(valor2);
+            double num1= Double.parseDouble(valor1);
+            double num2= Double.parseDouble(valor2);
             String resultado= String.valueOf(num1-num2);
             text_resultado.setText(resultado);
         }
@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         String valor2=text_valor2.getText().toString();
 
         if(!ValidarVacio(valor1,valor2)){
-            double num1= Integer.parseInt(valor1);
-            double num2= Integer.parseInt(valor2);
+            double num1= Double.parseDouble(valor1);
+            double num2= Double.parseDouble(valor2);
             String resultado= String.valueOf(num1*num2);
             text_resultado.setText(resultado);
         }
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
         String valor1=text_valor1.getText().toString();
         String valor2=text_valor2.getText().toString();
         if(!ValidarVacio(valor1,valor2)) {
-            double num1= Integer.parseInt(valor1);
-            double num2= Integer.parseInt(valor2);
+            double num1= Double.parseDouble(valor1);
+            double num2= Double.parseDouble(valor2);
             if(num2!=0){
                 String resultado= String.valueOf(num1/num2);
                 text_resultado.setText(resultado);
@@ -122,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
         String valor2=text_valor2.getText().toString();
 
         if(!ValidarVacio(valor1,valor2)) {
-            double num1= Math.abs(Integer.parseInt(valor1));
-            double num2= Math.abs(Integer.parseInt(valor2));
+            double num1= Math.abs(Double.parseDouble(valor1));
+            double num2= Math.abs(Double.parseDouble(valor2));
             if(validarEntero(num1,num2)  && !validarCero(num1,num2)){
                 while(num1 != num2) {
                     if (num1 > num2)
@@ -143,8 +143,8 @@ public class MainActivity extends AppCompatActivity {
 
         if(!ValidarVacio(valor1,valor2)) {
 
-            double num1 = Math.abs(Integer.parseInt(valor1));
-            double num2 = Math.abs(Integer.parseInt(valor2));
+            double num1 = Math.abs(Double.parseDouble(valor1));
+            double num2 = Math.abs(Double.parseDouble(valor2));
             int mcm, i;
             mcm = 1;
             i = 2;
@@ -168,8 +168,8 @@ public class MainActivity extends AppCompatActivity {
         String valor2=text_valor2.getText().toString();
 
         if(!ValidarVacio(valor1,valor2)){
-            double num1= Integer.parseInt(valor1);
-            double num2= Integer.parseInt(valor2);
+            double num1= Double.parseDouble(valor1);
+            double num2= Double.parseDouble(valor2);
             String mayor;
             if(num1>num2){
                 text_resultado.setText(String.valueOf(num1));
