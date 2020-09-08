@@ -90,47 +90,76 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    public boolean validarEntero(double n1, double n2){
+         boolean entero=true;
+         if(n1 % 1 !=0){
+             text_valor1.setError("ingrese un numero entero");
+           entero=false;
+         }
+         if(n2 % 2 !=0){
+             text_valor2.setError("ingrese un numero entero");
+             entero=false;
+         }
+
+         return  entero;
+    }
+    public  boolean validarCero(double n1, double n2){
+        boolean cero=false;
+        if(n1==0){
+            text_valor1.setError("Este valor no puede ser cero");
+            cero=true;
+        }
+        if(n2==0){
+            text_valor2.setError("Este valor no puede ser cero");
+            cero=true;
+        }
+
+        return  cero;
+    }
     public void MCD(View view){
         String valor1=text_valor1.getText().toString();
         String valor2=text_valor2.getText().toString();
 
         if(!ValidarVacio(valor1,valor2)) {
-            double num1= Integer.parseInt(valor1);
-            double num2= Integer.parseInt(valor2);
-             while(num1 != num2) {
-                 if (num1 > num2)
-                     num1 = num1 - num2;
-                 else
-                     num2 = num2 - num1;
-             }
-            text_resultado.setText("El MCD es: "+num1);
+            double num1= Math.abs(Integer.parseInt(valor1));
+            double num2= Math.abs(Integer.parseInt(valor2));
+            if(validarEntero(num1,num2)  && !validarCero(num1,num2)){
+                while(num1 != num2) {
+                    if (num1 > num2)
+                        num1 = num1 - num2;
+                    else
+                        num2 = num2 - num1;
+                }
+                text_resultado.setText("El MCD es: "+num1);
+            }
 
         }
     }
+
     public void MCM(View view){
         String valor1=text_valor1.getText().toString();
         String valor2=text_valor2.getText().toString();
 
         if(!ValidarVacio(valor1,valor2)) {
-            double num1= Integer.parseInt(valor1);
-            double num2= Integer.parseInt(valor2);
-            int mcm,i;
-            mcm=1;
-            i=2;
-            while(i <= num1 || i <= num2)
-            {
-                if(num1%i==0 || num2%i==0)
-                {
-                    mcm=mcm*i;
-                    if(num1%i==0) num1=num1/i;
-                    if(num2%i==0) num2=num2/i;
-                }
-                else
-                    i=i+1;
-            }
-            text_resultado.setText("El MCM es: "+mcm);
-        }
 
+            double num1 = Math.abs(Integer.parseInt(valor1));
+            double num2 = Math.abs(Integer.parseInt(valor2));
+            int mcm, i;
+            mcm = 1;
+            i = 2;
+            if (validarEntero(num1, num2) && !validarCero(num1,num2)) {
+                while (i <= num1 || i <= num2) {
+                    if (num1 % i == 0 || num2 % i == 0) {
+                        mcm = mcm * i;
+                        if (num1 % i == 0) num1 = num1 / i;
+                        if (num2 % i == 0) num2 = num2 / i;
+                    } else
+                        i = i + 1;
+                }
+                text_resultado.setText("El MCM es: " + mcm);
+            }
+        }
     }
 
 

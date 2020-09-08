@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">AlfredoCalculadora</string>
+
+    <string name="txt_View_String">Operaciones</string>
+
+    <string name="txt_num1">Introduce el primer valor</string>
+    <string name="txt_num2">Introduce el segundo valor</string>
+    <string name="txt_resultado">0</string>
+
+    <string name="txt_suma">Suma</string>
+    <string name="txt_resta">Resta</string>
+    <string name="txt_multiplicacion">Multiplicación</string>
+    <string name="txt_division">División</string>
+    <string name="txt_mcd">Máximo Común Divisor</string>
+    <string name="txt_mcm">Mínimo Común Multiplo</string>
+    <string name="txt_mayor">Número Mayor</string>
+
+
+
 </resources>
