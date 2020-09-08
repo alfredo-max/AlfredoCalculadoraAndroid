@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -25,46 +24,135 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // suma
+    public boolean ValidarVacio(String n1,String n2){
 
+        boolean vacio=false;
+        if(n1.isEmpty()){
+            text_valor1.setError("Este campo no puede quedar vacio");
+            vacio=true;
+        }
+        if(n2.isEmpty()){
+            text_valor2.setError("Este campo no puede quedar vacio");
+            vacio=true;
+        }
+
+        return vacio;
+    }
 
     public void Sumar(View view){
-
-         int num1= Integer.parseInt(text_valor1.getText().toString());
-         int num2= Integer.parseInt(text_valor2.getText().toString());
-         String resultado= String.valueOf(num1+num2);
-         text_resultado.setText(resultado);
+         String valor1=text_valor1.getText().toString();
+         String valor2=text_valor2.getText().toString();
+         if(!ValidarVacio(valor1,valor2)){
+             double num1= Integer.parseInt(valor1);
+             double num2= Integer.parseInt(valor2);
+             String resultado= String.valueOf(num1+num2);
+             text_resultado.setText(resultado);
+         }
     }
 
     public void Resta(View view){
-        int num1= Integer.parseInt(text_valor1.getText().toString());
-        int num2= Integer.parseInt(text_valor2.getText().toString());
-        String resultado= String.valueOf(num1-num2);
-        text_resultado.setText(resultado);
+        String valor1=text_valor1.getText().toString();
+        String valor2=text_valor2.getText().toString();
+
+        if(!ValidarVacio(valor1,valor2)){
+            double num1= Integer.parseInt(valor1);
+            double num2= Integer.parseInt(valor2);
+            String resultado= String.valueOf(num1-num2);
+            text_resultado.setText(resultado);
+        }
+
     }
 
     public void Multiplicacion(View view){
-        int num1= Integer.parseInt(text_valor1.getText().toString());
-        int num2= Integer.parseInt(text_valor2.getText().toString());
-        String resultado= String.valueOf(num1*num2);
-        text_resultado.setText(resultado);
+        String valor1=text_valor1.getText().toString();
+        String valor2=text_valor2.getText().toString();
+
+        if(!ValidarVacio(valor1,valor2)){
+            double num1= Integer.parseInt(valor1);
+            double num2= Integer.parseInt(valor2);
+            String resultado= String.valueOf(num1*num2);
+            text_resultado.setText(resultado);
+        }
+
     }
     public void Division(View view){
-        int num1= Integer.parseInt(text_valor1.getText().toString());
-        int num2= Integer.parseInt(text_valor2.getText().toString());
-        String resultado= String.valueOf(num1/num2);
-        text_resultado.setText(resultado);
+        String valor1=text_valor1.getText().toString();
+        String valor2=text_valor2.getText().toString();
+        if(!ValidarVacio(valor1,valor2)) {
+            double num1= Integer.parseInt(valor1);
+            double num2= Integer.parseInt(valor2);
+            if(num2!=0){
+                String resultado= String.valueOf(num1/num2);
+                text_resultado.setText(resultado);
+            }else{
+                text_resultado.setText("No se puede dividir por cero");
+            }
+        }
     }
 
-    /*
-    public int resta(int a,int b){
-        return a-b;
+    public void MCD(View view){
+        String valor1=text_valor1.getText().toString();
+        String valor2=text_valor2.getText().toString();
+
+        if(!ValidarVacio(valor1,valor2)) {
+            double num1= Integer.parseInt(valor1);
+            double num2= Integer.parseInt(valor2);
+             while(num1 != num2) {
+                 if (num1 > num2)
+                     num1 = num1 - num2;
+                 else
+                     num2 = num2 - num1;
+             }
+            text_resultado.setText("El MCD es: "+num1);
+
+        }
     }
-    public int multiplicacion(int a,int b){
-        return a*b;
+    public void MCM(View view){
+        String valor1=text_valor1.getText().toString();
+        String valor2=text_valor2.getText().toString();
+
+        if(!ValidarVacio(valor1,valor2)) {
+            double num1= Integer.parseInt(valor1);
+            double num2= Integer.parseInt(valor2);
+            int mcm,i;
+            mcm=1;
+            i=2;
+            while(i <= num1 || i <= num2)
+            {
+                if(num1%i==0 || num2%i==0)
+                {
+                    mcm=mcm*i;
+                    if(num1%i==0) num1=num1/i;
+                    if(num2%i==0) num2=num2/i;
+                }
+                else
+                    i=i+1;
+            }
+            text_resultado.setText("El MCM es: "+mcm);
+        }
+
     }
-    public int division(int a,int b){
-        return a/b;
+
+
+    public void mayor(View view){
+        String valor1=text_valor1.getText().toString();
+        String valor2=text_valor2.getText().toString();
+
+        if(!ValidarVacio(valor1,valor2)){
+            double num1= Integer.parseInt(valor1);
+            double num2= Integer.parseInt(valor2);
+            String mayor;
+            if(num1>num2){
+                text_resultado.setText(String.valueOf(num1));
+            }else if(num2>num1){
+                text_resultado.setText(String.valueOf(num2));
+            }else{
+                text_resultado.setText("Son iguales");
+            }
+
+        }
     }
-   */
+
+
 
 }

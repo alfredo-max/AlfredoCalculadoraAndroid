@@ -4,67 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#A8F3F0F0"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btn_resta"
-        android:layout_width="251dp"
-        android:layout_height="53dp"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="8dp"
         android:onClick="Resta"
         android:text="Resta"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_suma2" />
 
     <Button
         android:id="@+id/btn_multiplicacion"
-        android:layout_width="251dp"
-        android:layout_height="53dp"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="4dp"
         android:onClick="Multiplicacion"
         android:text="Multiplicación"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_suma2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_resta" />
 
     <Button
         android:id="@+id/btn_division"
-        android:layout_width="251dp"
-        android:layout_height="53dp"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="4dp"
         android:onClick="Division"
         android:text="División"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_suma2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_multiplicacion" />
+
+    <Button
+        android:id="@+id/btn_MCD2"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="4dp"
+        android:onClick="MCM"
+        android:text="Mínimo Común Multiplo"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_MCD" />
+
+    <Button
+        android:id="@+id/btn_mayor"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="4dp"
+        android:onClick="mayor"
+        android:text="Número Mayor"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_MCD2" />
+
+    <Button
+        android:id="@+id/btn_MCD"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="4dp"
+        android:onClick="MCD"
+        android:text="Máximo Común Divisor"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_division" />
 
     <Button
         android:id="@+id/btn_suma2"
-        android:layout_width="251dp"
-        android:layout_height="53dp"
+        android:layout_width="240dp"
+        android:layout_height="35dp"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:onClick="Sumar"
         android:text="Suma"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_resultado" />
 
     <TextView
         android:id="@+id/txt_resultado"
-        android:layout_width="85dp"
-        android:layout_height="47dp"
+        android:layout_width="243dp"
+        android:layout_height="33dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="0"
         android:textColor="#D84F4F"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_valor2" />
 
@@ -74,11 +117,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="introduce el primer valor"
         android:inputType="number"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,12 +131,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="introduce el segundo valor"
         android:inputType="number"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_valor1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="119dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mayor"
+        app:srcCompat="@mipmap/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
